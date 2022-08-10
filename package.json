@@ -1,0 +1,28 @@
+{
+  "name": "automatizacion",
+  "version": "1.0.0",
+  "description": "primer proyecto",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "alejandro martinez",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^9.5.2",
+    "cypress-file-upload": "^5.0.8",
+    "multiple-cucumber-html-reporter": "^1.21.6"
+  },
+  "dependencies": {
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "fileprefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  }
+}

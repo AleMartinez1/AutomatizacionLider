@@ -1,0 +1,83 @@
+[
+  {
+    "description": "    Adaptando casos de prueba desde POM hacia cucumber",
+    "keyword": "Feature",
+    "name": "Feature Recaudaciones",
+    "line": 1,
+    "id": "feature-recaudaciones",
+    "tags": [],
+    "uri": "Recaudaciones.feature",
+    "elements": [
+      {
+        "id": "feature-recaudaciones;scenario-pagar-monto-facturado-del-mes",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Scenario Pagar monto FACTURADO del mes",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "el usuario desea pagar su estado de cuenta",
+            "result": {
+              "status": "passed",
+              "duration": 19023000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "selecciona pagar el monto facturado mensual",
+            "result": {
+              "status": "passed",
+              "duration": 1033000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "ingresa su correo electronico",
+            "result": {
+              "status": "passed",
+              "duration": 949000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "presiona siguiente",
+            "result": {
+              "status": "passed",
+              "duration": 152000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "el usuario debe seleccionar el banco",
+            "result": {
+              "status": "failed",
+              "duration": 4048000000,
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#typeofpay`, but never found it.\n    at SeleccionBancoPage.getBancoSelect (https://botondepagodev.retailcard.cl/__cypress/tests?p=cypress\\integration\\Lider\\Cucumber\\Recaudaciones.feature:94:17)\n    at Context.eval (https://botondepagodev.retailcard.cl/__cypress/tests?p=cypress\\integration\\Lider\\Cucumber\\Recaudaciones.feature:69:22)\n    at Context.resolveAndRunStepDefinition (https://botondepagodev.retailcard.cl/__cypress/tests?p=cypress\\integration\\Lider\\Cucumber\\Recaudaciones.feature:10617:29)\n    at Context.eval (https://botondepagodev.retailcard.cl/__cypress/tests?p=cypress\\integration\\Lider\\Cucumber\\Recaudaciones.feature:9938:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "presiona siguiente",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
