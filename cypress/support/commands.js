@@ -40,16 +40,38 @@ Cypress.Commands.add("formularioQA", () => {
     cy.get(':nth-child(5) > input').type('2022-09-10')//Fecha de vencimiento
     cy.wait(1000)
     cy.get('.styleButton_yellowButton__OwYg3').click()//Siguiente
-
 })
 
 Cypress.Commands.add("verificarError", () => {
     cy.get('.modal_errorModal__tXGSo > h1').should('contain.text','Ha ocurrido un error')//titulo modal de error
     cy.get('.modal_errorModal__tXGSo > .styleButton_blueButton__SJ0lA').click()//aceptar modal de error*/
 
+    cy.get('h1')//error inesperado
+    cy.get('.redirect_card__Dx_UF > p')//Ocurrio un inconveniente al procesar tu pago, lamentamos las molestias porfavor vuelva a intentar
 })
+
+Cypress.Commands.add("Integracion", () => {
+    cy.get('.input-wrapper').type('111111111')
+    cy.get('.authorize-account-password-wrapper > .input-container > .input-wrapper').type('1111')
+    cy.get('.custom-button-container').click()
+    cy.wait(10000)
+    cy.get('.custom-button-container').click()
+    cy.wait(10000)
+    cy.get(':nth-child(1) > input').type('11111111')
+    cy.get('.custom-button-container').click()
+    cy.wait(5000)
+    cy.get('.input-wrapper').type('12')
+    cy.wait(1500)
+    cy.get('.custom-button-container').click()
+    cy.wait(5000)
+})
+
+
+
 //#########################################################################
 //BDP
+
+
 
 Cypress.Commands.add("asersionesTextos", () => {
     cy.get('.text > :nth-child(2)').should('contain.text', 'Pago en Línea') //LEVEL bienvenido a pago en linea

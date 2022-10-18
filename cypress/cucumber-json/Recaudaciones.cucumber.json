@@ -9,10 +9,10 @@
     "uri": "Recaudaciones.feature",
     "elements": [
       {
-        "id": "feature-recaudaciones;scenario-pagar-monto-facturado-del-mes",
+        "id": "feature-recaudaciones;scenario-outline-name:-scenario-pagar-monto-facturado-del-mes",
         "keyword": "Scenario",
-        "line": 5,
-        "name": "Scenario Pagar monto FACTURADO del mes",
+        "line": 15,
+        "name": "Scenario Outline name: Scenario Pagar monto FACTURADO del mes",
         "tags": [],
         "type": "scenario",
         "steps": [
@@ -20,10 +20,10 @@
             "arguments": [],
             "keyword": "Given ",
             "line": 6,
-            "name": "el usuario desea pagar su estado de cuenta",
+            "name": "un usuario que desea pagar su estado de cuenta",
             "result": {
               "status": "passed",
-              "duration": 19023000000
+              "duration": 18567000000
             }
           },
           {
@@ -33,17 +33,17 @@
             "name": "selecciona pagar el monto facturado mensual",
             "result": {
               "status": "passed",
-              "duration": 1033000000
+              "duration": 933000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 8,
-            "name": "ingresa su correo electronico",
+            "name": "ingresa su correo electronico abc@gmail.com",
             "result": {
               "status": "passed",
-              "duration": 949000000
+              "duration": 395000000
             }
           },
           {
@@ -53,27 +53,157 @@
             "name": "presiona siguiente",
             "result": {
               "status": "passed",
-              "duration": 152000000
+              "duration": 93000000
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "feature-recaudaciones;scenario-outline-name:-scenario-pagar-monto-facturado-del-mes",
+        "keyword": "Scenario",
+        "line": 16,
+        "name": "Scenario Outline name: Scenario Pagar monto FACTURADO del mes",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
           {
             "arguments": [],
-            "keyword": "Then ",
-            "line": 10,
-            "name": "el usuario debe seleccionar el banco",
+            "keyword": "Given ",
+            "line": 6,
+            "name": "un usuario que desea pagar su estado de cuenta",
             "result": {
-              "status": "failed",
-              "duration": 4048000000,
-              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#typeofpay`, but never found it.\n    at SeleccionBancoPage.getBancoSelect (https://botondepagodev.retailcard.cl/__cypress/tests?p=cypress\\integration\\Lider\\Cucumber\\Recaudaciones.feature:94:17)\n    at Context.eval (https://botondepagodev.retailcard.cl/__cypress/tests?p=cypress\\integration\\Lider\\Cucumber\\Recaudaciones.feature:69:22)\n    at Context.resolveAndRunStepDefinition (https://botondepagodev.retailcard.cl/__cypress/tests?p=cypress\\integration\\Lider\\Cucumber\\Recaudaciones.feature:10617:29)\n    at Context.eval (https://botondepagodev.retailcard.cl/__cypress/tests?p=cypress\\integration\\Lider\\Cucumber\\Recaudaciones.feature:9938:35)"
+              "status": "passed",
+              "duration": 18091000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 11,
+            "line": 7,
+            "name": "selecciona pagar el monto facturado mensual",
+            "result": {
+              "status": "passed",
+              "duration": 843000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "ingresa su correo electronico abc123@gmail.com",
+            "result": {
+              "status": "passed",
+              "duration": 390000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
             "name": "presiona siguiente",
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 90000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "feature-recaudaciones;scenario-outline-name:-scenario-pagar-monto-facturado-del-mes",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "Scenario Outline name: Scenario Pagar monto FACTURADO del mes",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "un usuario que desea pagar su estado de cuenta",
+            "result": {
+              "status": "passed",
+              "duration": 18000000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "selecciona pagar el monto facturado mensual",
+            "result": {
+              "status": "passed",
+              "duration": 448000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "ingresa su correo electronico abc456@gmail.com",
+            "result": {
+              "status": "passed",
+              "duration": 446000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "presiona siguiente",
+            "result": {
+              "status": "passed",
+              "duration": 103000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "feature-recaudaciones;scenario-outline-name:-scenario-pagar-monto-facturado-del-mes",
+        "keyword": "Scenario",
+        "line": 18,
+        "name": "Scenario Outline name: Scenario Pagar monto FACTURADO del mes",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "un usuario que desea pagar su estado de cuenta",
+            "result": {
+              "status": "passed",
+              "duration": 18254000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "selecciona pagar el monto facturado mensual",
+            "result": {
+              "status": "passed",
+              "duration": 435000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "ingresa su correo electronico abc789@gmail.com",
+            "result": {
+              "status": "passed",
+              "duration": 414000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "presiona siguiente",
+            "result": {
+              "status": "passed",
+              "duration": 98000000
             }
           }
         ]

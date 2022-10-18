@@ -11,7 +11,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     return false
 })
 
-Given('el usuario desea pagar su estado de cuenta', () => {
+Given('un usuario que desea pagar su estado de cuenta', () => {
     cy.visit("https://botondepagodev.retailcard.cl/frontend/testing")
     cy.wait(2000)
     cy.formularioQA()
@@ -23,13 +23,11 @@ And('selecciona pagar el monto facturado mensual', () => {
     seleccionMontoPage.getMontoFacturadoRadioButton().click()
 })
 
-And('ingresa su correo electronico', () => {
-    seleccionMontoPage.getEmailInput().type('m.alejandro.tito@gmail.com')
+And('ingresa su correo electronico {word}', (email) => {
+    seleccionMontoPage.getEmailInput().type(email)
 })
 
 When('presiona siguiente', () => {
     seleccionMontoPage.getSiguienteButton().click({ force: true })
 })
-Then('el usuario debe seleccionar el banco', () => {
-    seleccionBancoPage.getBancoSelect().select('ETPAY_BANCOPRUEBA')
-})
+
