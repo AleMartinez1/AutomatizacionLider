@@ -1,25 +1,23 @@
 
 ///<reference types="Cypress"/>
 
-describe('Regresion Backoffice', function () {
+describe('Login', function () {
 
     beforeEach(function () {
       cy.visit("https://botondepagodev.retailcard.cl/backoffice/login")
       cy.wait(2000)
+        
     })
 
-    it('Login exitoso', function () {
-        cy.get('#user').type('opoblete.ext')
-        cy.get('#password').type('Lider2022')
-        cy.get('._button_BlueButton__YhRsF').click()
-        cy.get('h1').should('contain.text','Administrador Transaccional')
+    it.only('Login exitoso', function () {
+        cy.loginBackoffice()
     })
 
     it('Login con datos incorrectos', function () {
         cy.get('#user').type('opoblete.ext')
         cy.get('#password').type('Lider20')
         cy.get('._button_BlueButton__YhRsF').click()
-        cy.get('h1').should('contain.text','Administrador Transaccional')
+        cy.get('.login_card__I_tRd > p').should('contain.text','El nombre de usuario y contraseña no coinciden, por favor inténtalo nuevamente.')
         cy.wait(2000)
     })
 
@@ -35,6 +33,7 @@ describe('Regresion Backoffice', function () {
         cy.get(':nth-child(2) > .login_headInput__uZX_2 > [style="color:#FF7280"]').should('contain.text','Nombre de usuario es requerido ')
 
     })
+
     it('Login sin completar campos', function () {
         cy.get('._button_BlueButton__YhRsF').click()
         cy.get(':nth-child(2) > .login_headInput__uZX_2 > [style="color:#FF7280"]').should('contain.text','Nombre de usuario es requerido ')

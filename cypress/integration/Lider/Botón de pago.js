@@ -25,7 +25,6 @@ describe('Tests', function () {
     it('Caso exitoso', function () {
 
         cy.asersionesTextos()
-    
 
         clientesPage.getExpirationDateInput().type(04 / 26)
         clientesPage.getCvvInput().type('673')

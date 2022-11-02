@@ -7,26 +7,12 @@ describe('Usuarios', function () {
         cy.visit("https://botondepagodev.retailcard.cl/backoffice/login")
         cy.wait(2000)
 
-        cy.get('#user').type('opoblete.ext')
-        cy.get('#password').type('Lider2022')
-        cy.get('._button_BlueButton__YhRsF').click()
-        cy.get('h1').should('contain.text', 'Administrador Transaccional')
+        cy.loginBackoffice()
 
     })
 
     it('Alta Usuarios exitoso', function () {
-
-        cy.get('.sidebar_body__mAqjs > :nth-child(2)').click()
-        cy.get('.animate__animated > p').click()
-        cy.get('._button_icon__iS_fm > p').click()
-        cy.get('#userName').type('Prueba Cuatro')
-        cy.get(':nth-child(1) > ._input_label__gfcd1 > #name').type('Test Cuatro')
-        cy.get('#email').type('sofitestCuatro@gmail.com')
-        cy.get('#habilitado').click()
-        cy.get(':nth-child(4) > ._button_BlueButton__YhRsF').click()
-        cy.get('.modal_deleteButtons__4PKE4 > ._button_BlueButton__YhRsF').click()
-        cy.wait(2000)
-
+        cy.altaUsuario()
     })
 
     it('Alta Usuarios solo con campo userName', function () {
@@ -52,14 +38,14 @@ describe('Usuarios', function () {
         cy.wait(2000)
     })
 
-    it('Alta Usuarios solo con campo Mail', function () {
+    it.only('Alta Usuarios solo con campo Mail', function () {
 
         cy.get('.sidebar_body__mAqjs > :nth-child(2)').click()
         cy.get('.animate__animated > p').click()
         cy.get('._button_icon__iS_fm > p').click()
         cy.get('#email').type('sofitest@gmail.com')
         cy.get('#habilitado').click()
-        cy.get(':nth-child(4) > ._button_BlueButton__YhRsF').click()
+        cy.get('.modals_modalColumn__3CEB4 > :nth-child(4) > ._button_BlueButton__YhRsF').click()
         cy.wait(2000)
     })
 
