@@ -61,7 +61,7 @@ Cypress.Commands.add("ErrorGroup1", () => {
 
 //Backoffice
 Cypress.Commands.add("loginBackoffice", () => {
-    cy.get('#user').type('opoblete.ext')
+    cy.get('#user').type('jpenac')
     cy.get('#password').type('Lider2022')
     cy.get('._button_BlueButton__YhRsF').click()
     cy.get('h1').should('contain.text', 'Administrador Transaccional')
