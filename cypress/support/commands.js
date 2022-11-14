@@ -1,53 +1,26 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-
-
 import 'cypress-file-upload';
 //Recaudaciones
 Cypress.Commands.add("formularioQA", () => {
     //Rut
     cy.get('form > :nth-child(1) > p').should('contain.text', 'rut: ingresar sin punto ni guion ( un rut valido )')
-    cy.get(':nth-child(1) > input').type('12345678')//Rut
+    cy.get(':nth-child(1) > input').type('12345678') //Rut
     cy.wait(1000)
-    cy.get(':nth-child(2) > input').type('WEB')//Canal
+    cy.get(':nth-child(2) > input').type('WEB') //Canal
     cy.wait(1000)
-    cy.get(':nth-child(3) > input').type('80000')//Monto mensual
+    cy.get(':nth-child(3) > input').type('80000') //Monto mensual
     cy.wait(1000)
-    cy.get(':nth-child(4) > input').type('15000')//Monto minimo
-    cy.get(':nth-child(5) > input').type('2022-09-10')//Fecha de vencimiento
+    cy.get(':nth-child(4) > input').type('15000') //Monto minimo
+    cy.get(':nth-child(5) > input').type('2022-09-10') //Fecha de vencimiento
     cy.wait(1000)
-    cy.get('.styleButton_yellowButton__OwYg3').click()//Siguiente
+    cy.get('.styleButton_yellowButton__OwYg3').click() //Siguiente
 })
 
 Cypress.Commands.add("verificarError", () => {
-    cy.get('.modal_errorModal__tXGSo > h1').should('contain.text','Ha ocurrido un error')//titulo modal de error
-    cy.get('.modal_errorModal__tXGSo > .styleButton_blueButton__SJ0lA').click()//aceptar modal de error*/
+    cy.get('.modal_errorModal__tXGSo > h1').should('contain.text', 'Ha ocurrido un error') //titulo modal de error
+    cy.get('.modal_errorModal__tXGSo > .styleButton_blueButton__SJ0lA').click() //aceptar modal de error*/
 
-    cy.get('h1')//error inesperado
-    cy.get('.redirect_card__Dx_UF > p')//Ocurrio un inconveniente al procesar tu pago, lamentamos las molestias porfavor vuelva a intentar
+    cy.get('h1') //error inesperado
+    cy.get('.redirect_card__Dx_UF > p') //Ocurrio un inconveniente al procesar tu pago, lamentamos las molestias porfavor vuelva a intentar
 })
 
 Cypress.Commands.add("Integracion", () => {
@@ -81,7 +54,30 @@ Cypress.Commands.add("asersionesTextos", () => {
 })
 
 Cypress.Commands.add("ErrorGroup1", () => {
-    cy.get('#title-mapped').should('contain.text','Lo sentimos')
-    cy.get('#message-mapped').should('contain.text','group 1')
+    cy.get('#title-mapped').should('contain.text', 'Lo sentimos')
+    cy.get('#message-mapped').should('contain.text', 'group 1')
     cy.get('#button-mapped').click()
+})
+
+//Backoffice
+Cypress.Commands.add("loginBackoffice", () => {
+    cy.get('#user').type('jpenac')
+    cy.get('#password').type('Lider2022')
+    cy.get('._button_BlueButton__YhRsF').click()
+    cy.get('h1').should('contain.text', 'Administrador Transaccional')
+
+})
+
+Cypress.Commands.add('altaUsuario', () =>{
+    
+    cy.get('.sidebar_body__mAqjs > :nth-child(2)').click()
+    cy.get('.animate__animated > p').click()
+    cy.get('._button_icon__iS_fm > p').click()
+    cy.get('#userName').type('Prueba Cuatro')
+    cy.get(':nth-child(1) > ._input_label__gfcd1 > #name').type('Test Cuatro')
+    cy.get('#email').type('sofitestCuatro@gmail.com')
+    cy.get('#habilitado').click()
+    cy.get(':nth-child(4) > ._button_BlueButton__YhRsF').click()
+    cy.get('.modal_deleteButtons__4PKE4 > ._button_BlueButton__YhRsF').click()
+    cy.wait(2000)
 })
