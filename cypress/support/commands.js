@@ -85,3 +85,13 @@ Cypress.Commands.add("ErrorGroup1", () => {
     cy.get('#message-mapped').should('contain.text','group 1')
     cy.get('#button-mapped').click()
 })
+
+//#########################################################################
+//BDP
+Cypress.Commands.add("loginBackoffice", () => {
+    cy.get('#user').type('opoblete.ext')
+    cy.get('#password').type('Lider2022')
+    cy.wait(500)
+    cy.get('._button_BlueButton__YhRsF').click()
+})
+
