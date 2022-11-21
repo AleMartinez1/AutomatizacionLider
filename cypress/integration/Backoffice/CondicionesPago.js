@@ -5,26 +5,26 @@ import MainPage from '../../support/PageObjects/BO-CondicionPago/MainPage'
 
 describe('CondicionDePago', function () {
 
-    const condicionPagoPage  = new CondicionDePagoPage()
+    const condicionPagoPage = new CondicionDePagoPage()
     const mainPage = new MainPage()
 
     beforeEach(function () {
 
-      cy.visit("https://botondepagodev.retailcard.cl/backoffice/login")
-      cy.wait(2000)
+        cy.visit("https://botondepagodev.retailcard.cl/backoffice/login")
+        cy.wait(2000)
 
-      cy.loginBackoffice()
+        cy.loginBackoffice()
 
-      mainPage.getBotonDePagoUnClick().click()
-      mainPage.getBtAdministracion().click()
-      mainPage.getBtCondicionesPago().click()
-  
+        mainPage.getBotonDePagoUnClick().click()
+        mainPage.getBtAdministracion().click()
+        mainPage.getBtCondicionesPago().click()
+
     })
 
 
     it('Agregar nueva condicion de pago exitoso', function () {
 
-        let numeroAleatorio = Math.floor(Math.random()*31)+1;
+        let numeroAleatorio = Math.floor(Math.random() * 31) + 1;
 
         condicionPagoPage.getAgregarNuevaCondicion().click()
         condicionPagoPage.getInputDescripcion().type('descripcion test')
@@ -37,7 +37,7 @@ describe('CondicionDePago', function () {
 
     it('Agregar nueva condicion de pago solo con cantidadCuentasISO', function () {
 
-        let numeroAleatorio = Math.floor(Math.random()*31)+1;
+        let numeroAleatorio = Math.floor(Math.random() * 31) + 1;
 
         condicionPagoPage.getAgregarNuevaCondicion().click()
         condicionPagoPage.getInputCantidadCuotasISO().type(numeroAleatorio)
@@ -65,7 +65,7 @@ describe('CondicionDePago', function () {
 
     it('editar condicion de pago exitoso', function () {
 
-        let numeroAleatorio = Math.floor(Math.random()*31)+1;
+        let numeroAleatorio = Math.floor(Math.random() * 31) + 1;
 
         condicionPagoPage.getBtnEditar().click()
         condicionPagoPage.getInputDescripcion().clear().type('editar Test')
@@ -76,7 +76,7 @@ describe('CondicionDePago', function () {
 
     it('editar condicion de pago solo campo cantidadCuotasISO', function () {
 
-        let numeroAleatorio = Math.floor(Math.random()*31)+1;
+        let numeroAleatorio = Math.floor(Math.random() * 31) + 1;
 
         condicionPagoPage.getBtnEditar().click()
         condicionPagoPage.getInputDescripcion().clear()
@@ -86,7 +86,6 @@ describe('CondicionDePago', function () {
     })
 
     it('editar condicion de pago solo campo descripcion', function () {
-
         condicionPagoPage.getBtnEditar().click()
         condicionPagoPage.getInputDescripcion().clear().type('editar Test')
         condicionPagoPage.getInputCantidadCuotasISOEditar().clear()
@@ -94,12 +93,10 @@ describe('CondicionDePago', function () {
     })
 
     it('editar condicion de pago con campos vacios', function () {
-
         condicionPagoPage.getBtnEditar().click()
         condicionPagoPage.getInputDescripcion().clear()
         condicionPagoPage.getInputCantidadCuotasISOEditar().clear()
         condicionPagoPage.getBtnGuardarEditar().click()
-        
     })
 
     it('Eliminar condicion de pago', function () {
@@ -107,34 +104,31 @@ describe('CondicionDePago', function () {
         condicionPagoPage.getBtnConfirmarEliminar().click()
         condicionPagoPage.getBtnAceptarEliminarCorrectamente().click()
         cy.wait(2000)
-
     })
 
-    //filtros
 
     it('Filtrar por descripcion', function () {
-
         condicionPagoPage.getInputDescripcionFiltro().type('cuotas')
         condicionPagoPage.getBtnBuscarCondicionesPagos().click()
-        
-        
     })
 
     it('Filtrar por identificador', function () {
-        condicionPagoPage.getInputIdentificador().type('16')
+        condicionPagoPage.getInputIdentificadorFiltro().type('16')
         condicionPagoPage.getBtnBuscarCondicionesPagos().click()
-        
     })
 
     it('Filtrar por descripcion e identificador', function () {
-
-        condicionPagoPage.getInputIdentificador().type('16')
+        condicionPagoPage.getInputIdentificadorFiltro().type('16')
         condicionPagoPage.getInputDescripcionFiltro().type('cuotas')
         condicionPagoPage.getBtnBuscarCondicionesPagos().click()
-        
     })
 
-    
-
+    it('Limpiar filtros', function () {
+        condicionPagoPage.getInputIdentificadorFiltro().type('16')
+        condicionPagoPage.getInputDescripcionFiltro().type('cuotas')
+        condicionPagoPage.getBtnBuscarCondicionesPagos().click()
+        cy.wait(2000)
+        condicionPagoPage.getLimpiarFiltros().click()
+    })
 
 })

@@ -48,7 +48,7 @@ class CondicionDePagoPage{
         return cy.get('.modal_deleteButtons__4PKE4 > ._button_BlueButton__YhRsF')
     }
 
-    getInputIndentificador(){
+    getInputIdentificadorFiltro(){
         return cy.get(':nth-child(1) > ._input_label__gfcd1 > ._input_input__PipBM')
     }
 
@@ -67,6 +67,8 @@ class CondicionDePagoPage{
         return cy.get('.modal_deleteButtons__4PKE4 > ._button_BlueButton__YhRsF')
     }
 
+    
+    
 
  
 }
