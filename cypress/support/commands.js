@@ -59,6 +59,17 @@ Cypress.Commands.add("ErrorGroup1", () => {
     cy.get('#button-mapped').click()
 })
 
+//#########################################################################
+//Backoffice
+Cypress.Commands.add("loginBackoffice", () => {
+    cy.get('#user').type('jpenac')
+    cy.get('#password').type('Lider2022')
+    cy.wait(500)
+    cy.get('._button_BlueButton__YhRsF').click()
+})
+
+
+
 //Backoffice
 Cypress.Commands.add("loginBackoffice", () => {
     cy.get('#user').type('jpenac')
