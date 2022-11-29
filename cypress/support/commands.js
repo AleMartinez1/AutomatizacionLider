@@ -67,6 +67,14 @@ Cypress.Commands.add("loginBackoffice", () => {
     cy.get('h1').should('contain.text', 'Administrador Transaccional')
 
 })
+/*Cypress.Commands.add('login', (username, password) => {
+  cy.session([username, password], () => {
+    cy.visit('https://botondepagodev.retailcard.cl/backoffice/login')
+    cy.get('#user').type(username)
+    cy.get('#password').type(password)
+    cy.get('._button_BlueButton__YhRsF').click()
+  })
+})*/
 
 Cypress.Commands.add('altaUsuario', () =>{
     

@@ -1,4 +1,6 @@
 {
-    "chromeWebSecurity": false
+    "chromeWebSecurity": false,
+    "experimentalSessionSupport":true,
+    "experimentalSessionAndOrigin": true
 }
 

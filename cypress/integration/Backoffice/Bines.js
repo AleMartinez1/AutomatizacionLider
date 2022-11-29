@@ -71,7 +71,7 @@ describe('CondicionDePago', function () {
 
     })
 
-    it('Agregar nueva condicion de pago con campos vacios', function () {
+    it('Agregar nuevo Bin con campos vacios', function () {
 
         
         MantencionBinesPage.getBtnCrearBin().click()
@@ -98,7 +98,7 @@ describe('CondicionDePago', function () {
 
     })
 
-    it('editar condicion de pago solo campo Bin y Card', function () {
+    it('editar Bin solo campo Bin y Card', function () {
 
         let numeroAleatorio = Math.floor(Math.random() * 31) + 1;
 
@@ -108,14 +108,14 @@ describe('CondicionDePago', function () {
         MantencionBinesPage.getBtnGuardarEdicion().click()
     })
 
-    it('editar condicion de pago solo campo descripcion', function () {
+    it('editar Bin solo campo descripcion', function () {
 
         MantencionBinesPage.getBtnEditarBin().click()
         MantencionBinesPage.getInputDescripcionEditar().clear().type('texto editado')
         MantencionBinesPage.getBtnGuardarEdicion().click()
     })
 
-    it('editar condicion de pago con campos vacios', function () {
+    it('editar Bin con campos vacios', function () {
 
         MantencionBinesPage.getBtnEditarBin().click()
         MantencionBinesPage.getBtnInputBinEditar().clear().click()
@@ -127,7 +127,7 @@ describe('CondicionDePago', function () {
         
     })
 
-    it('Eliminar condicion de pago', function () {
+    it('Eliminar Bin', function () {
         MantencionBinesPage.getBtnEliminarBin().click()
         MantencionBinesPage.getBtnEliminarRegistroBin().click()
         MantencionBinesPage.getBtnSeEliminoBin().click()
